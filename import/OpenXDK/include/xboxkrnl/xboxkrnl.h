@@ -754,10 +754,10 @@ FILE_RENAME_INFORMATION;
 // * FILE_LINK_INFORMATION
 // ******************************************************************
 typedef struct _FILE_LINK_INFORMATION {
-	BOOLEAN         ReplaceIfExists;
 	HANDLE          RootDirectory;
 	ULONG           FileNameLength;
 	CHAR            FileName[1];
+	BOOLEAN         ReplaceIfExists;	
 } FILE_LINK_INFORMATION, *PFILE_LINK_INFORMATION;
 
 // ******************************************************************
