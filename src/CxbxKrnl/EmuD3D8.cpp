@@ -5661,6 +5661,7 @@ VOID WINAPI XTL::EMUPATCH(D3DResource_Register)
             "0x%.08X (pFixup->Next)   \n"
             "0x%.08X (pFixup->Size)   \n", pFixup->Common, pFixup->Data, pFixup->Lock, pFixup->Run, pFixup->Next, pFixup->Size);
         }
+		break;
 
         default:
             CxbxKrnlCleanup("IDirect3DResource8::Register -> Common Type 0x%.08X not yet supported", dwCommonType);
