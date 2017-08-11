@@ -6459,7 +6459,7 @@ VOID WINAPI XTL::EMUPATCH(D3DDevice_EnableOverlay)
             g_pDDSOverlay7 = nullptr;
         }
     }
-    else if(Enable == TRUE && (g_pDDSOverlay7 == nullptr))
+    else if(Enable != FALSE && (g_pDDSOverlay7 == nullptr))
     {
         // initialize overlay surface
         if(g_bSupportsYUY2)
