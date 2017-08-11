@@ -86,7 +86,8 @@ INT_PTR CALLBACK DlgAboutProc(HWND hWndDlg, UINT uMsg, WPARAM wParam, LPARAM lPa
 			// Get tab pane dimensions
 			RECT tabRect;
 			GetClientRect(GetDlgItem(hWndDlg, IDC_TAB1), &tabRect);
-			SendMessage(GetDlgItem(hWndDlg, IDC_TAB1), TCM_ADJUSTRECT, FALSE, (LPARAM)&tabRect);
+			SendMessage(GetDlgItem(hWndDlg, IDC_TAB1), TCM_ADJUSTRECT, FALSE, (LPARAM)&tabRect);
+
 			// Tab Pane 1
 			HWND tab = CreateWindowEx
         	(NULL, "STATIC", "\nCxbx-Reloaded\nVersion " _CXBX_VERSION "\n© The Cxbx-Reloaded Team",
@@ -149,7 +150,8 @@ INT_PTR CALLBACK DlgAboutProc(HWND hWndDlg, UINT uMsg, WPARAM wParam, LPARAM lPa
 			aboutTabPanes.push_back(tab);
 
 			aboutCurrentTab = 0;
-        	UpdateWindow(hWndDlg);			
+        	UpdateWindow(hWndDlg);
+			
         }
         break;
 
@@ -187,7 +189,9 @@ INT_PTR CALLBACK DlgAboutProc(HWND hWndDlg, UINT uMsg, WPARAM wParam, LPARAM lPa
 			}
 
 			// Show the selected tab pane
-			ShowWindow(aboutTabPanes[aboutCurrentTab], SW_HIDE);			ShowWindow(aboutTabPanes[index], SW_SHOW);		
+			ShowWindow(aboutTabPanes[aboutCurrentTab], SW_HIDE);
+			ShowWindow(aboutTabPanes[index], SW_SHOW);
+		
 			aboutCurrentTab = index;
 		}
 		break;
